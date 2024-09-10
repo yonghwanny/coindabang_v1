@@ -1,0 +1,106 @@
+/* 모바일용 CSS */
+/* 기본 CSS */
+#wrap {
+	display:flex;
+	flex-flow:column nowrap;
+	width:100%;
+	
+		margin:0 auto;
+	
+	
+}
+#wrap section {
+	box-sizing:border-box;
+}
+
+#bottom {
+	
+	
+	width:100%;
+	margin:0 auto;
+	
+	position:absolute;
+	bottom:3rem;
+	
+}
+
+
+/* 로고영역 CSS */
+.logo {
+	height:100%;
+	width:100%;	
+	
+	text-align:center;
+	padding:120px 0;
+	padding:7.5rem 0;
+	
+}
+.logo ul {
+	
+	
+	
+	
+	font-size:0.9375em;
+	font-size:0.9375rem;
+	line-height:15px;
+	line-height:0.9375rem;
+	text-align:center;
+	font-weight:bold;
+    text-transform:uppercase;
+	
+}
+
+
+/* 로그인 CSS */
+
+.index_login {
+	
+	text-align:center;
+	padding:1rem 0;
+	
+		
+	
+	
+		
+}
+
+
+.index_login a{
+	
+	border-radius:7px;
+		font-weight:bold;
+	
+	text-align:center;	
+	padding:0.938rem 7rem;
+	color:#000000;
+	background: #FECE06;
+	
+		
+}
+
+.see {
+	
+		
+	
+	text-align:center;
+	padding:1rem 0;
+	
+		
+	font-size:1rem;
+	
+		
+}
+
+
+.see a{
+	
+	border-radius:5px;
+	font-weight:bold;	
+	
+	text-align:center;	
+	padding:0 0.3rem;
+	color:#000000;
+	
+	
+		
+}
