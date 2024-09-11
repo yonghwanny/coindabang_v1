@@ -1,8 +1,8 @@
 import React from "react";
-import "../styles/reset.css";
-import "../styles/index.css";
+import "../../styles/reset.css";
+import "../../styles/index.css";
 import Image from 'next/image';
-import logo_home from "../assets/logo_home.png";
+import logo_home from "../../assets/logo_home.png";
 import Link from 'next/link';
 
 export default function Home() {
