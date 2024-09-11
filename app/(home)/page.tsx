@@ -3,6 +3,7 @@ import "../styles/reset.css";
 import "../styles/index.css";
 import Image from 'next/image';
 import logo_home from "../assets/logo_home.png";
+import Link from 'next/link';
 
 export default function Home() {
   return (
@@ -18,12 +19,12 @@ export default function Home() {
 
       <section className="index_login" >
 			  <ul>
-				  <li><a href="login.html">로그인</a></li>
+				  <li><Link href="/login">로그인</Link></li>
 			  </ul>
       </section>
       <section  className="see">
 			<ul>
-				<li>나중에로그인 하시겠어요?  <a href="news.html"> 둘러보기</a></li>
+				<li>나중에로그인 하시겠어요?  <Link href="/news"> 둘러보기</Link></li>
 			</ul>
       </section>
 	  </div>

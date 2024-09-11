@@ -1,0 +1,351 @@
+/* 모바일용 CSS */
+/* 기본 CSS */
+#wrap {
+	display:flex;
+	flex-flow:column nowrap;
+	width:100%;
+	margin:0 auto;
+	
+	
+}
+#wrap section {
+	box-sizing:border-box;
+}
+
+#bottom {
+	display:flex;
+	flex-flow:column nowrap;
+	width:100%;
+	margin:0 auto;
+	
+	position:fixed;
+	bottom:0px;
+	
+	
+}
+#bottom section {
+	box-sizing:border-box;
+}
+
+/* 타이틀영역 CSS */
+.title_section {
+	
+	width:100%;	
+	border-bottom: 1px #000000 solid;
+	text-align:center;
+	
+}
+.title {
+	
+	
+	padding:15px 0;
+	padding:0.9375rem 0;
+	font-size:0.9375em;
+	font-size:0.9375rem;
+	line-height:15px;
+	line-height:0.9375rem;
+	text-align:center;
+	font-weight:bold;
+    text-transform:uppercase;
+	
+	
+	
+	
+}
+.Wellcome {
+	
+	
+	padding:0.9375rem 0;
+	font-size:0.9em;
+	font-size:0.9rem;
+	line-height:15px;
+	line-height:0.9375rem;
+	text-align:center;
+	
+    text-transform:uppercase;
+	
+	
+	
+	
+}
+
+/*  로고 영역 */
+.logo_login {
+	margin-top: 0.625rem;	
+	width:100%;
+	text-align:center;
+	
+	
+
+	
+}
+
+.logo_login ul {
+	
+	
+	padding:0.3rem 2rem;
+
+	
+
+}
+	
+
+/* 아이디 비번 입력폼 CSS */
+
+
+.idpw {
+	margin-top: 0.625rem;	
+	width:100%;	
+	
+	
+}
+.idpw ul {
+	
+	
+	padding:0.3rem 2rem;	
+
+}
+
+.idpw li {
+		
+			text-align:left;			
+			
+padding:0.9375rem;
+border-radius:5px;
+	border:1px #ddd solid;	
+
+
+}
+
+input::placeholder {
+  color: #777;
+  font-size: 0.9rem;
+ 
+}
+
+
+.idpw input{
+	
+
+	width:100%;
+	background:#FFF;
+	border:none;
+	height:1.5rem;
+
+
+
+font-size:1.25rem;
+
+
+color:#000;
+}
+
+
+/* .idpw::-moz-input-placeholder{
+color:#999999;
+
+}
+
+.idpw::-webkit-input-placeholder {
+color:#999999;
+
+}  */
+
+
+/* 체크박스 영역 */
+
+.autobox {
+	margin-top: 0.625rem;	
+	width:100%;
+	
+
+	
+}
+
+.autobox ul {
+	
+	
+	padding:0.3rem 2rem;	
+
+
+}
+
+
+.autobox input[type=checkbox] {  
+    display: none;  
+}
+
+.autobox input[type=checkbox] + label{
+    display: inline-block;  
+    cursor: pointer;  
+    position: relative;  
+    padding-left: 25px;  
+    margin-right: 15px;  
+    font-size: 13px;
+	line-height:20px;
+}
+
+.autobox input[type=checkbox]+ label:before {     
+
+    content: "";  
+    display: inline-block;  
+  
+    width: 20px;  
+    height: 20px;  
+  
+    margin-right: 10px;  
+    position: absolute;  
+    left: 0;  
+    bottom: 1px;
+	border-radius:5px;
+	    background-color: #FECE06;  
+    
+    box-shadow: inset 0px 1px 1px 0px rgba(0, 0, 0, .3), 0px 1px 0px 0px rgba(255, 255, 255, .8);  
+}
+
+.autobox input[type=checkbox]:checked + label:before { 
+
+    content: "\2713";  /* 체크모양 */
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, .2);  
+    font-size: 18px; 
+    font-weight:800; 
+    color: #000;  
+    background:#FECE06;
+    text-align: center;  
+    line-height: 18px;
+	
+	
+
+} 
+
+.autotext {
+	font-weight:bold;
+	
+	}
+
+
+
+
+/* 로그인 영역 */
+.login {
+	margin-top: 0.625rem;	
+	width:100%;
+	text-align:center;
+	
+	
+
+	
+}
+
+.login ul {
+	
+	
+	padding:0.3rem 2rem;
+
+	
+
+}
+
+
+.login a{
+border-radius:5px;
+display:block;
+width:100%;
+
+font-size:1.125em;
+font-size:1.125rem;
+font-weight:bold;
+
+height:3.5rem;
+
+line-height:3.5rem;
+text-align:center;
+	color:#000;
+	background: #FECE06;
+}
+
+/* 구글로그인 영역 */
+.google_login {
+	margin-top: 0.625rem;	
+	width:100%;
+	text-align:center;
+	
+	
+
+	
+}
+
+.google_login ul {
+	
+	
+	padding:0.3rem 2rem;
+
+	
+
+}
+
+
+.google_login a{
+border-radius:5px;
+border:1px #ddd solid;
+display:block;
+width:100%;
+
+height:3.5rem;
+line-height:1rem;
+text-align:center;
+	color:#000;
+	background: #fff;
+
+	
+	
+}
+
+.google_login img{
+	padding-top: 0.88rem;
+
+
+	
+	
+}
+
+/*아이디/비밀번호찾기,회원가입*/
+
+.idpwjoin {
+	
+		
+	
+	text-align:center;
+	padding:1rem 0;
+	
+		
+	font-size:0.9rem;
+	
+		
+}
+
+
+.idpwjoin a{
+	
+	border-radius:5px;
+	font-weight:bold;	
+	
+	text-align:center;	
+	padding:0 0.3rem;
+	color:#000000;
+	
+	
+		
+}
+
+
+
+/* 이미지 색상 변화 
+
+.icon:hover {
+    filter: invert(100%) sepia(89%) saturate(6054%) hue-rotate(358deg) brightness(97%) contrast(113%);
+
+}
+
+*/
+
