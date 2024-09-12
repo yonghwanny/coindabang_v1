@@ -1,3 +1,5 @@
+"use client";
+
 import React from 'react';
 
 import "../../styles/reset.css";
@@ -6,8 +8,18 @@ import Image from 'next/image';
 import logo_login from "../../assets/logo_login.png";
 import google_btn from "../../assets/google_btn.png";
 import Link from 'next/link';
+import supabase from '../(supabase)/supabase';
+//import { GoogleLogin } from './google';
 
 export default function Login() {
+	const googleLogin = async () => {
+
+		const { error } = await supabase.auth.signInWithOAuth({
+			provider: 'google',
+		});
+		if(error) console.log("error: ", error.message);
+	
+	}
 
   return(
     <React.Fragment>
@@ -54,7 +66,7 @@ export default function Login() {
 
 			<section className="google_login" >
 			<ul>
-				<li><Link href="/google_login"><Image src={google_btn} alt="google login" /></Link></li>
+				<li><a href="#!" onClick={googleLogin}><Image src={google_btn} alt="google login" /></a></li>
 			</ul>
       </section>
       <section className="idpwjoin">
