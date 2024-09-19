@@ -1,6 +1,6 @@
 "use client";
 
-import React from 'react';
+import React, { useState } from 'react';
 
 import "../../styles/reset.css";
 import "../../styles/login.css";
@@ -8,17 +8,30 @@ import Image from 'next/image';
 import logo_login from "../../assets/logo_login.png";
 import google_btn from "../../assets/google_btn.png";
 import Link from 'next/link';
-import supabase from '../(supabase)/supabase';
+//import supabase from '../(supabase)/supabase';
 //import { GoogleLogin } from './google';
+import { createClient } from '@supabase/supabase-js';
+
+const supabaseUrl = "https://naamqyzhbpehywqhabek.supabase.co";
+const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5hYW1xeXpoYnBlaHl3cWhhYmVrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjI5MjE2NzgsImV4cCI6MjAzODQ5NzY3OH0.RrN-cmsEII8UXbUdRYCDbJqORJh5yr6MxMa1BdZ0Kx8";//process.env.SUPABASE_KEY;
+const supabase = createClient(supabaseUrl, supabaseKey);
 
 export default function Login() {
+	const [loading, setLoading] = useState(false);
 	const googleLogin = async () => {
-
-		const { error } = await supabase.auth.signInWithOAuth({
-			provider: 'google',
-		});
-		if(error) console.log("error: ", error.message);
-	
+		try {
+			setLoading(true);
+			const { error } = await supabase.auth.signInWithOAuth({
+				provider: 'google',
+			});
+			if(error) console.log("error: ", error.message);
+		
+		} catch (error) {
+			alert(error.message);
+		} finally {
+			setLoading(false);
+		}
+		
 	}
 
   return(
@@ -66,7 +79,7 @@ export default function Login() {
 
 			<section className="google_login" >
 			<ul>
-				<li><a href="#!" onClick={googleLogin}><Image src={google_btn} alt="google login" /></a></li>
+				<li><a onClick={googleLogin} title={loading ?  '로그인중...' : '구글로 로그인'}><Image src={google_btn} alt="google login" /></a></li>
 			</ul>
       </section>
       <section className="idpwjoin">
