@@ -1,0 +1,201 @@
+/* 모바일용 CSS */
+/* 기본 CSS */
+#header {
+	display: flex;
+	flex-flow: column nowrap;
+	width: 100%;
+	margin: 0 auto;
+	position: fixed;
+	top: 0px;
+	background: #FFF;
+}
+#header section {
+	box-sizing: border-box;
+}
+#content {
+	display: flex;
+	flex-flow: column nowrap;
+	width: 100%;
+	margin: 0 auto;
+	margin-top: 90px;
+	margin-bottom: 60px;
+}
+#content section {
+	box-sizing: border-box;
+}
+#bottom {
+	display: flex;
+	flex-flow: column nowrap;
+	width: 100%;
+	margin: 0 auto;
+	position: fixed;
+	bottom: 0px;
+}
+#bottom section {
+	box-sizing: border-box;
+}
+ body::-webkit-scrollbar {
+ display:none;
+}
+/* 헤더상단 */
+.header_top {
+	width: 100%;
+	border-bottom: 1px #000000 solid;
+	text-align: center;
+}
+.header_top ul {
+	display: flex;
+	padding: 10px 10px 5px 10px;
+	font-size: 17px;
+	line-height: 15px;
+	text-align: center;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+.header_top img {
+	vertical-align: middle;
+}
+.header_top li:nth-child(1) {
+	width: 30%;
+	text-align: left;
+}
+.header_top li:nth-child(2) {
+	width: 33%;
+}
+.header_top li:nth-child(3) {
+	width: 37%;
+	text-align: right;
+}
+.header_top li:nth-child(3) img {
+	padding-top: 3px;
+}
+/* 서브메뉴 영역 CSS */
+.submenu {
+	width: 100%;
+	border-bottom: 1px #FECE06 solid;
+	text-align: center;
+}
+.submenu ul {
+	text-align: center;
+	display: flex;
+}
+.submenu li {
+	text-align: center;
+	font-size: 14px;
+	line-height: 15px;
+	text-transform: uppercase;
+}
+.submenu li a {
+	display: block;
+	padding: 8px 0;
+	color: #555555;
+}
+.subtitle {
+	display: block;
+	padding: 8px 0;
+	background: #FECE06;
+	color: #000000;
+}
+.submenu li:nth-child(1) {
+	width: 30%;
+}
+.submenu li:nth-child(2) {
+	width: 33%;
+}
+.submenu li:nth-child(3) {
+	width: 37%;
+}
+/* 본문 */
+
+
+.content {
+	width: 100%;
+}
+.content ul {
+	padding: 16px;
+	font-size: 15px;
+	line-height: 24px;
+}
+/* 메인메뉴 영역 CSS */
+.mainmenu {
+	width: 100%;
+	background: #FECE06;
+	text-align: center;
+}
+.mainmenu ul {
+	text-align: center;
+	display: flex;
+}
+.mainmenu li {
+	text-align: center;
+	font-size: 12px;
+	line-height: 14px;
+	text-transform: uppercase;
+}
+.mainmenu li a {
+	display: block;
+	padding: 0.7rem 0;
+	color: #000000;
+}
+/* 이미지 색상 변화 
+
+.icon:hover {
+    filter: invert(100%) sepia(89%) saturate(6054%) hue-rotate(358deg) brightness(97%) contrast(113%);
+
+}
+
+*/
+.market {
+	display: block;
+	padding: 11px 0;
+	color: #ffffff;
+	background: #FECE06;
+}
+.mainmenu li:nth-child(1) {
+	width: 20%;
+}
+.mainmenu li:nth-child(2) {
+	width: 20%;
+}
+.mainmenu li:nth-child(3) {
+	width: 20%;
+}
+.mainmenu li:nth-child(3) img {
+	padding: 4px 0 2px 0;
+}
+.mainmenu li:nth-child(4) {
+	width: 20%;
+}
+.mainmenu li:nth-child(5) {
+	width: 20%;
+}
+.mainmenu li:nth-child(5) img {
+	padding: 1px 0 2px 0;
+}
+
+table {
+  border-spacing: 0;
+  border-radius: 8px;
+  border: 1px solid black;
+  overflow: hidden;
+}
+
+th,
+td {
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+th {
+  background-color: #0ac266;
+  color: white;
+}
+
+th:last-child,
+td:last-child {
+  border-right-width: 0;
+}
+
+tr:last-child td {
+  border-bottom-width: 0;
+}

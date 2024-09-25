@@ -11,7 +11,7 @@ background:transparent;
 
 body{
 font-family:Noto Sans,NanumGothic,나눔고딕,'Nanum Gothic','맑은 고딕',HelveticaNeue,DroidSans,Sans-serif,Helvetica;
-background:url('');
+/*background:url(../images/s_images/body_bg.png);*/
 line-height:1;
 }
 
@@ -35,9 +35,9 @@ color:#000;
 background:transparent;
 }
 
-img{
+/* img{
 vertical-align:top;
-}
+} */
 
 table{
 border-collapse:collapse;
@@ -76,3 +76,8 @@ android:clickable="false"
 @font-face{font-family:'Nanum Gothic'; src:url(../webfont/NanumGothic.woff)}
 
 */
+
+/* 폰트 css */
+
+.bold { font-weight:bold 
+}
