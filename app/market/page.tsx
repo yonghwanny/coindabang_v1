@@ -35,9 +35,10 @@ export default function Market () {
     const fetchData = async () => {
       const { data, error } = await supabase
       .from("coin_status")
-      .select("market, korean_name, english_name, opening_price, high_price, low_price, trade_price, prev_closing_price")
+      .select("market, get_datetime, korean_name, english_name, opening_price, high_price, low_price, trade_price, prev_closing_price, acc_trade_volume_24h")
       .like("market", "KRW-%")
-      .order('created_at', { ascending: false })
+      .order('get_datetime', { ascending: false })
+      .order('acc_trade_volume_24h', { ascending: false })
       .limit(100)
 
       if (error) console.log("error", error)
@@ -74,6 +75,7 @@ export default function Market () {
        <table>
         <thead>
           <tr>
+            <th align='center'>Date</th>
             <th align='center'>마켓</th>
             <th align='center'>코인명</th>
             <th align='center'>영어명</th>
@@ -82,12 +84,14 @@ export default function Market () {
             <th align='center'>저가</th>
             <th align='center'>현재가</th>
             <th align='center'>전일가</th>
+            <th align='center'>24h 거래량</th>
           </tr>
         </thead>
         <tbody>
         {
        data.map((rows, key) => (
         <tr key={key}>
+          <td align='center'>{rows.get_datetime}</td>
           <td align='center'>{rows.market}</td>
           <td align='center'>{rows.korean_name}</td>
           <td align='center'>{rows.english_name}</td>
@@ -96,6 +100,7 @@ export default function Market () {
           <td align='center'>{rows.low_price}</td>
           <td align='center'>{rows.trade_price}</td>
           <td align='center'>{rows.prev_closing_price}</td>
+          <td align='center'>{rows.acc_trade_volume_24h.toFixed(2).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",")}</td>
         </tr>
        ))
        }
