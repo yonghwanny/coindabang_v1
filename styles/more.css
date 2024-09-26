@@ -1,0 +1,267 @@
+@charset "utf-8";
+/* 모바일용 CSS */
+/* 기본 CSS */
+#header {
+	display: flex;
+	flex-flow: column nowrap;
+	width: 100%;
+	margin: 0 auto;
+	position: fixed;
+	top: 0px;
+	background: #FFF;
+}
+#header section {
+	box-sizing: border-box;
+}
+#content {
+	display: flex;
+	flex-flow: column nowrap;
+	width: 100%;
+	margin: 0 auto;
+	margin-top: 46px;
+	margin-bottom: 60px;
+}
+#content section {
+	box-sizing: border-box;
+}
+#bottom {
+	display: flex;
+	flex-flow: column nowrap;
+	width: 100%;
+	margin: 0 auto;
+	position: fixed;
+	bottom: 0px;
+}
+#bottom section {
+	box-sizing: border-box;
+}
+ body::-webkit-scrollbar {
+ display:none;
+}
+/* 헤더상단 */
+.header_top {
+	width: 100%;
+	border-bottom: 1px #000000 solid;
+	text-align: center;
+}
+.header_top ul {
+	display: flex;
+	padding: 10px 10px 5px 10px;
+	font-size: 17px;
+	line-height: 15px;
+	text-align: center;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+.header_top img {
+	vertical-align: middle;
+}
+.header_top li:nth-child(1) {
+	width: 30%;
+	text-align: left;
+}
+.header_top li:nth-child(2) {
+	width: 33%;
+}
+.header_top li:nth-child(3) {
+	width: 37%;
+	text-align: right;
+}
+.header_top li:nth-child(3) img {
+	padding-top: 3px;
+}
+/* 본문 */
+
+/* 아이디 로그인 로그아웃 */
+.id_loginout {
+	width: 100%;
+	background: #FECE06;
+	text-align: center;
+}
+.id_loginout ul:nth-child(1) {
+	padding: 20px;
+	text-align: center;
+}
+.id_loginout ul:nth-child(2) {
+	padding: 3px;
+	background: #eee;
+}
+.id_loginout li {
+	text-align: center;
+}
+.id_loginout img {
+	padding-bottom: 9px;
+	vertical-align: middle;
+}
+.id_btn {
+	color: #000;
+	font-size: 16px;
+	font-weight: bold;
+}
+/* .id_btn:hover {
+	display: block;
+	padding: 0.7rem 0;
+	color: #000000;
+} */
+
+.loginout_btn {
+	display: inline-block;
+	margin: 18px 0 4px 0;
+	padding: 8px 10px;
+	border-radius: 5px;
+	font-size: 12px;
+	color: #000000;
+	font-weight: bold;
+	background: #000;
+	text-align: center;
+	color: #FECE06;
+}
+/* .loginout_btn:hover {
+	display: block;
+	padding: 0.7rem 0;
+	color: #000000;
+	background: #FECE06;
+	font-weight: bold;
+} */
+
+
+/* .id_loginout li:nth-child(1) {
+	 width:82%;
+	text-align:left;
+	
+	
+}
+.id_loginout li:nth-child(2) {
+	width:18%;
+	line-height: 30px;
+	
+	text-align:right;
+	
+} */
+
+
+/* 공지사항 */
+
+.notice {
+	width: 100%;
+	padding: 10px 20px 8px 20px;
+}
+.notice ul {
+	padding: 5px 0;
+}
+.notice_title {
+	display: flex;
+	font-weight: bold;
+	border-bottom: 1px #000000 solid;
+	font-size: 15px;
+	line-height: 24px;
+}
+.notice_title li:nth-child(1) {
+	width: 50%;
+	text-align: left;
+}
+.notice_title li:nth-child(2) {
+	width: 50%;
+	text-align: right;
+}
+.notice_title img {
+	position: relative;
+	top: 4px;
+}
+.notice_list {
+	font-size: 15px;
+	line-height: 28px;
+}
+.notice_list li {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.notice_list a {
+	color: #555;
+}
+.notice_icon {
+	
+}
+.notice_list img {
+	vertical-align: middle;
+	margin:0 5px 2px 0;
+
+}
+/* 더보기 메뉴 */
+
+.more_menu {
+	border-top: 1px #eee solid;
+	width: 100%;
+	padding: 10px 20px 0 20px;
+}
+.more_menu ul {
+}
+.more_menu li {
+	padding: 10px 0;
+	font-size: 14px;
+	
+}
+.more_menu a {
+	color: #333;
+}
+/* 메인메뉴 영역 CSS */
+
+
+
+.mainmenu {
+	width: 100%;
+	background: #FECE06;
+	text-align: center;
+}
+.mainmenu ul {
+	text-align: center;
+	display: flex;
+}
+.mainmenu li {
+	text-align: center;
+	font-size: 12px;
+	line-height: 14px;
+	text-transform: uppercase;
+}
+.mainmenu li a {
+	display: block;
+	padding: 11px 0;
+	color: #000000;
+}
+/* 이미지 색상 변화 
+
+.icon:hover {
+    filter: invert(100%) sepia(89%) saturate(6054%) hue-rotate(358deg) brightness(97%) contrast(113%);
+
+}
+
+*/
+.more {
+	display: block;
+	padding: 15px 0;
+	padding: 0.7rem 0;
+	color: #ffffff;
+	background: #FECE06;
+}
+.mainmenu li:nth-child(1) {
+	width: 20%;
+}
+.mainmenu li:nth-child(2) {
+	width: 20%;
+}
+.mainmenu li:nth-child(3) {
+	width: 20%;
+}
+.mainmenu li:nth-child(3) img {
+	padding: 4px 0 2px 0;
+}
+.mainmenu li:nth-child(4) {
+	width: 20%;
+}
+.mainmenu li:nth-child(5) {
+	width: 20%;
+}
+.mainmenu li:nth-child(5) img {
+	padding: 1px 0 2px 0;
+}
