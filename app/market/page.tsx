@@ -100,7 +100,7 @@ export default function Market () {
           <td align='center'>{rows.low_price}</td>
           <td align='center'>{rows.trade_price}</td>
           <td align='center'>{rows.prev_closing_price}</td>
-          <td align='center'>{rows.acc_trade_volume_24h.toFixed(2).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",")}</td>
+          <td align='right'>{rows.acc_trade_volume_24h.toFixed(2).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",")}</td>
         </tr>
        ))
        }
