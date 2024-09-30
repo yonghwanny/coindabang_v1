@@ -27,9 +27,8 @@ export default function News () {
   </section>
   <section className="submenu">
     <ul>
-      <li className="subtitle">메뉴1</li>
-      <li><a href="news_02.html">메뉴2</a></li>
-      <li><a href="news_03.html">메뉴3</a></li>
+      <li className="subtitle">코인뉴스요약</li>
+      <li><a href="news_02.html">코인유튜브요약</a></li>
     </ul>
   </section>
 </div>
