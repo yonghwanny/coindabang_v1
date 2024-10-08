@@ -13,7 +13,8 @@ import icon_more from "../../assets/icon_more.svg";
 import logo_icon from "../../assets/logo_icon.png";
 import user_profile from "../../assets/user-profile.svg";
 
-import CoinDeskRss from '../../components/CoindeskNews';
+//import CoinDeskRss from '../../components/CoindeskNews';
+import YoutubeSummary from '../../components/YoutubeSummary';
 
 export default function News () {
 
@@ -39,7 +40,7 @@ export default function News () {
     <ul>
       <li>
       본문
-      <CoinDeskRss />
+      <YoutubeSummary />
       </li>
     </ul>
   </section>

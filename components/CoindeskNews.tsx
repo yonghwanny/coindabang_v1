@@ -9,7 +9,7 @@ const App = () => {
 
   useEffect(() => {
     const fetchRss = async () => {
-      const response = await axios.get('https://www.coindesk.com/arc/outboundfeeds/rss/');
+      const response = await axios.get('');
       const rssItems = response.data.rss.channel.item;
       setRssItems(rssItems);
     };
