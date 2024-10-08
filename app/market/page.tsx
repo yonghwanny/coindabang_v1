@@ -62,7 +62,7 @@ export default function Market () {
   <section className="submenu">
     <ul>
       <li className="subtitle">Now</li>
-      <li><a href="market_02.html">Coin Chart</a></li>
+      <li><Link href="/market/coin_index">Coin Chart</Link></li>
       <li><a href="market_03.html">Economy Chart</a></li>
     </ul>
   </section>

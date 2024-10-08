@@ -12,7 +12,7 @@ import icon_what from "../../assets/icon_what.svg";
 import icon_more from "../../assets/icon_more.svg";
 import logo_icon from "../../assets/logo_icon.png";
 import user_profile from "../../assets/user-profile.svg";
-import FearAndGreedIndex from '../../components/FearGreed';
+
 import CoinDeskRss from '../../components/CoindeskNews';
 
 export default function News () {
@@ -39,7 +39,6 @@ export default function News () {
     <ul>
       <li>
       본문
-      <FearAndGreedIndex />
       <CoinDeskRss />
       </li>
     </ul>

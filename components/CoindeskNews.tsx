@@ -1,69 +1,54 @@
 "use client";
-
-import Head from 'next/head';
-import Link from 'next/link';
-import groq from 'groq';
 import { useState, useEffect } from 'react';
+import axios from 'axios';
+import Groq from 'groq';
 
-const rssUrl = 'https://www.coindesk.com/arc/outboundfeeds/rss/';
-const groqApiUrl = 'https://api.groq.io/v1/translate';
-const targetLanguage = 'ko';
-
-const Feed = () => {
-  const [feed, setFeed] = useState([]);
+const App = () => {
+  const [rssItems, setRssItems] = useState([]);
+  const [translatedItems, setTranslatedItems] = useState([]);
 
   useEffect(() => {
-    const fetchFeed = async () => {
-      const response = await fetch(rssUrl);
-      const rssData = await response.text();
-      const feedItems = parseRss(rssData);
-      const translatedFeed = await translateFeed(feedItems);
-      setFeed(translatedFeed);
+    const fetchRss = async () => {
+      const response = await axios.get('https://www.coindesk.com/arc/outboundfeeds/rss/');
+      const rssItems = response.data.rss.channel.item;
+      setRssItems(rssItems);
     };
-    fetchFeed();
+    fetchRss();
   }, []);
 
-  const parseRss = (rssData) => {
-    const parser = new DOMParser();
-    const rssDoc = parser.parseFromString(rssData, 'application/xml');
-    const feedItems = [];
-    const items = rssDoc.querySelectorAll('item');
-    items.forEach((item) => {
-      const title = item.querySelector('title').textContent;
-      const link = item.querySelector('link').textContent;
-      const description = item.querySelector('description').textContent;
-      feedItems.push({ title, link, description });
-    });
-    return feedItems;
-  };
-
-  const translateFeed = async (feedItems) => {
-    const translatedFeed = [];
-    for (const item of feedItems) {
-      const translationResponse = await fetch(`${groqApiUrl}?text=${item.title}&targetLanguage=${targetLanguage}`);
-      const translation = await translationResponse.json();
-      const translatedTitle = translation.text;
-      const translationResponse2 = await fetch(`${groqApiUrl}?text=${item.description}&targetLanguage=${targetLanguage}`);
-      const translation2 = await translationResponse2.json();
-      const translatedDescription = translation2.text;
-      translatedFeed.push({ title: translatedTitle, link: item.link, description: translatedDescription });
-    }
-    return translatedFeed;
-  };
+  useEffect(() => {
+    const translateItems = async () => {
+      const groqApiKey = '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';
+      const groqApiUrl = `https://api.groq.io/v1/translate`;
+      const translatedItems = [];
+      rssItems.forEach((item) => {
+        const title = item.title;
+        const params = {
+          text: title,
+          target: 'ko',
+          api_key: groqApiKey,
+        };
+        axios.post(groqApiUrl, params)
+          .then((response) => {
+            const translatedTitle = response.data.translations[0].text;
+            translatedItems.push({ ...item, title: translatedTitle });
+          })
+          .catch((error) => {
+            console.error(error);
+          });
+      });
+      setTranslatedItems(translatedItems);
+    };
+    translateItems();
+  }, [rssItems]);
 
   return (
     <div>
-      <Head>
-        <title>CoinDesk RSS Feed in Korean</title>
-      </Head>
-      <h1>CoinDesk RSS Feed in Korean</h1>
+      <h1>Coindesk RSS Feed in Korean</h1>
       <ul>
-        {feed.map((item) => (
+        {translatedItems.map((item) => (
           <li key={item.link}>
-            <Link href={item.link}>
-              <a>{item.title}</a>
-            </Link>
-            <p>{item.description}</p>
+            <a href={item.link}>{item.title}</a>
           </li>
         ))}
       </ul>
@@ -71,4 +56,4 @@ const Feed = () => {
   );
 };
 
-export default Feed;
+export default App;
